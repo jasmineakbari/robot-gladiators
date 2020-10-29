@@ -41,7 +41,7 @@ var fight = function(enemyName) {
             else {
             window.alert(playerName + " still has " + playerHealth + " health left.");
             }
-    
+        
         // if player chooses to skip
         } else if (promptFight === "skip" || promptFight === "SKIP") {
             // confirm the player wants to skip
@@ -54,13 +54,14 @@ var fight = function(enemyName) {
                 //subtract money from playerMoney for skipping
                 playerMoney = playerMoney - 10;
                 console.log("playerMoney", playerMoney);
+                break;
             }
             //if no (false), ask question again by running fight() again
             else {
                 fight();
             }
- 
-        } else {
+        }
+        else {
             window.alert("You need to choose a valid option. Try again!")
         }
         
