@@ -43,7 +43,7 @@ var fight = function(enemyName) {
             }
     
         // if player chooses to skip
-        else if (promptFight === "skip" || promptFight === "SKIP") {
+        } else if (promptFight === "skip" || promptFight === "SKIP") {
             // confirm the player wants to skip
             var confirmSkip = window.confirm("Are you sure you'd like to quit?");
     
@@ -55,12 +55,12 @@ var fight = function(enemyName) {
                 playerMoney = playerMoney - 10;
                 console.log("playerMoney", playerMoney);
             }
-            //if no (false), ask question again by runnging fight() again
+            //if no (false), ask question again by running fight() again
             else {
                 fight();
             }
  
-        else {
+        } else {
             window.alert("You need to choose a valid option. Try again!")
         }
         
