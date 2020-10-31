@@ -137,9 +137,18 @@ var randomNumber = function(min, max) {
 
     return value;
 }
+// Get Player Name Function
+var getPlayerName = function() {
+    var name = "";
+    
+    while (name === "" || name === null) {
+        name = prompt("What is your robot's name");
+    }
+}
+
 //Player Info Object and Enemy info Array
 var playerInfo = {
-    name: window.prompt("What's your robot's name?"),
+    name: getPlayerName(),
     health: 100,
     attack: 10,
     money: 10,
