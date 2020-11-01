@@ -7,9 +7,11 @@ var fightOrSkip = function() {
         return fightOrSkip();
     }
 
-    if (promptFight === "skip" || promptFight === "SKIP") {
+    promptFight = promptFight.toLowerCase();
+    if (promptFight === "skip") {
     // confirm the player wants to skip
     var confirmSkip = window.confirm("Are you sure you'd like to quit?");
+    return true;
     }
 
     // if yes (true), leave fight
@@ -17,7 +19,7 @@ var fightOrSkip = function() {
         window.alert(playerInfo.name + " has decided to skip this fight. Goodbye!");
             
         playerInfo.money = Math.max(0, playerInfo.money - 10);
-        shop();
+        return false;
     }
 }
 
@@ -25,6 +27,9 @@ var fightOrSkip = function() {
 var fight = function(enemy) {
     while(enemy.health > 0 && playerInfo.health > 0) {
         fightOrSkip();
+        if (fightOrSkip()) {
+            break;
+        }
     
         // Enemy Code
         var damage = randomNumber(playerInfo.attack - 3, playerInfo.attack);
